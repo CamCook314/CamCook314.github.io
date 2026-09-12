@@ -1,0 +1,443 @@
+<title>Cameron Cook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --bg:#F4F7F8;
+  --surface:#FFFFFF;
+  --ink:#101A1F;
+  --ink-2:#4B5C65;
+  --ink-3:#7C8C95;
+  --line:#DBE4E7;
+  --line-strong:#C3D0D5;
+  --accent:#0F6E7A;
+  --accent-ink:#0B545E;
+  --accent-soft:#E2EFF1;
+  --shadow:0 1px 2px rgba(16,26,31,.04), 0 8px 24px -16px rgba(16,26,31,.18);
+
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1216;
+    --surface:#121C21;
+    --ink:#E7EEF0;
+    --ink-2:#9AAAB2;
+    --ink-3:#6C7C85;
+    --line:#202E35;
+    --line-strong:#2C3D46;
+    --accent:#4FB8C4;
+    --accent-ink:#7ED0D9;
+    --accent-soft:#113136;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1216;
+  --surface:#121C21;
+  --ink:#E7EEF0;
+  --ink-2:#9AAAB2;
+  --ink-3:#6C7C85;
+  --line:#202E35;
+  --line-strong:#2C3D46;
+  --accent:#4FB8C4;
+  --accent-ink:#7ED0D9;
+  --accent-soft:#113136;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px}
+a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--line-strong)}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+.masthead{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.name{
+  font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,7vw,4.2rem);
+  line-height:1.02;letter-spacing:-.028em;margin:0;text-wrap:balance;
+}
+.role{
+  font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 18px;
+}
+.lede{
+  font-size:1.2rem;color:var(--ink-2);max-width:64ch;margin:20px 0 0;line-height:1.55;
+}
+.lede strong{color:var(--ink);font-weight:600}
+.meta{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;
+  font-family:var(--mono);font-size:.82rem;color:var(--ink-2);
+}
+.meta a{border-bottom-color:var(--line)}
+
+/* ---------- measured strip ---------- */
+.measured{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid var(--line);
+}
+.fig{padding:30px 26px 30px 0}
+.fig:not(:last-child){border-right:1px solid var(--line)}
+.fig:not(:first-child){padding-left:26px}
+.fig-n{
+  font-family:var(--display);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.3rem);
+  letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums;
+  color:var(--accent);
+}
+.fig-l{
+  font-size:.9rem;color:var(--ink-2);margin-top:9px;line-height:1.35;
+}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-head{
+  font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 32px;
+}
+
+/* ---------- projects ---------- */
+.proj{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:30px 0}
+.proj + .proj{border-top:1px solid var(--line)}
+.proj-metric{
+  font-family:var(--display);font-weight:600;font-size:1.85rem;letter-spacing:-.02em;
+  line-height:1.05;color:var(--accent);font-variant-numeric:tabular-nums;
+}
+.proj-metric small{
+  display:block;font-family:var(--mono);font-size:.72rem;font-weight:400;
+  letter-spacing:.06em;color:var(--ink-3);margin-top:8px;line-height:1.4;
+  text-transform:uppercase;
+}
+.proj-metric.none{color:var(--ink-3);font-size:1.1rem}
+h3{
+  font-family:var(--display);font-weight:600;font-size:1.32rem;letter-spacing:-.012em;
+  margin:0 0 4px;line-height:1.25;text-wrap:balance;
+}
+.proj-where{
+  font-family:var(--mono);font-size:.78rem;color:var(--ink-3);margin:0 0 12px;
+}
+.proj p{margin:0 0 14px;color:var(--ink-2);max-width:62ch}
+.proj p strong{color:var(--ink);font-weight:600}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{
+  font-family:var(--mono);font-size:.73rem;color:var(--ink-2);
+  background:var(--surface);border:1px solid var(--line);
+  padding:3px 9px;border-radius:3px;
+}
+.repo{font-family:var(--mono);font-size:.8rem}
+.private{
+  font-family:var(--mono);font-size:.75rem;color:var(--ink-3);
+  border-bottom:none;font-style:normal;
+}
+
+/* ---------- capabilities ---------- */
+.caps{display:grid;gap:0}
+.cap{
+  display:grid;grid-template-columns:190px 1fr;gap:28px;
+  padding:16px 0;border-top:1px solid var(--line);
+}
+.cap:last-child{border-bottom:1px solid var(--line)}
+.cap-k{
+  font-family:var(--mono);font-size:.8rem;color:var(--ink);font-weight:500;
+  letter-spacing:.01em;padding-top:2px;
+}
+.cap-v{color:var(--ink-2);font-size:.98rem}
+
+/* ---------- education / footer ---------- */
+.edu{display:grid;grid-template-columns:190px 1fr;gap:28px}
+.edu-k{font-family:var(--mono);font-size:.8rem;color:var(--ink-3)}
+.edu p{margin:0 0 10px;color:var(--ink-2);max-width:62ch}
+.edu strong{color:var(--ink);font-weight:600}
+footer{
+  padding:44px 0 72px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:.84rem;color:var(--ink-2);
+  display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;
+}
+footer .avail{color:var(--ink-3)}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  .masthead{padding:52px 0 32px}
+  .measured{grid-template-columns:1fr 1fr}
+  .fig{padding:22px 18px 22px 0}
+  .fig:nth-child(2n){border-right:none;padding-left:18px}
+  .fig:nth-child(1),.fig:nth-child(2){border-bottom:1px solid var(--line)}
+  .fig:nth-child(3){padding-left:0}
+  .proj,.cap,.edu{grid-template-columns:1fr;gap:12px}
+  .proj-metric{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="role">Software Engineer · Brisbane, Australia</p>
+    <h1 class="name">Cameron Cook</h1>
+    <p class="lede">
+      I build software at the boundary between computation and physical measurement — from
+      bare-metal microcontrollers and parallel numerical code through to data pipelines and
+      production applications. <strong>Everything here carries a measured result</strong>, because
+      I work in a laboratory where "roughly right" isn't a category.
+    </p>
+    <div class="meta">
+      <span>camcook314@gmail.com</span>
+      <a href="https://github.com/CamCook314">github.com/CamCook314</a>
+      <span>BCompSci, University of Queensland — graduating 2026</span>
+    </div>
+  </header>
+
+  <div class="measured">
+    <div class="fig">
+      <div class="fig-n">&gt;100&times;</div>
+      <div class="fig-l">runtime improvement, parallel matrix reduction</div>
+    </div>
+    <div class="fig">
+      <div class="fig-n">~6&times;</div>
+      <div class="fig-l">throughput gain from one diagnosed concurrency bug</div>
+    </div>
+    <div class="fig">
+      <div class="fig-n">18,000</div>
+      <div class="fig-l">documents through a pipeline built for one client</div>
+    </div>
+    <div class="fig">
+      <div class="fig-n">4 yrs</div>
+      <div class="fig-l">analytical laboratory, under QA/QC discipline</div>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="sec-head">Selected work</h2>
+
+    <article class="proj">
+      <div class="proj-metric">&gt;100&times;<small>measured speed-up</small></div>
+      <div>
+        <h3>Parallel Matrix Decomposition</h3>
+        <p class="proj-where">Householder / Hessenberg reduction · C, OpenMP · University, COSC3500</p>
+        <p>
+          Implemented Householder-transform matrix reduction from scratch on arbitrary N&times;N
+          matrices, using <strong>no numerical libraries</strong>. Parallelised with OpenMP, then
+          profiled and cache-optimised across successive versions to a measured
+          <strong>&gt;100&times; improvement</strong> over the first working implementation.
+          Built with a Makefile, run as SLURM-scheduled batch jobs on a Linux cluster, with output
+          validated against reference results.
+        </p>
+        <p class="repo"><a href="https://github.com/CamCook314/hessenberg-reduction-hpc">github.com/CamCook314/hessenberg-reduction-hpc</a></p>
+        <div class="stack">
+          <span class="tag">C</span><span class="tag">OpenMP</span><span class="tag">SLURM</span>
+          <span class="tag">Makefile</span><span class="tag">Linux</span><span class="tag">profiling</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric">18,000<small>documents processed</small></div>
+      <div>
+        <h3>Searchable Archive Pipeline</h3>
+        <p class="proj-where">Document processing &amp; search · Python, JavaScript · pro bono client project</p>
+        <p>
+          A batch pipeline converting scanned photographs and PDFs into a full-text-searchable
+          corpus for a non-technical end user, paired with a <strong>hand-built, zero-dependency
+          search engine</strong> — inverted index, TF-IDF-style ranking, fuzzy and wildcard matching.
+        </p>
+        <p>
+          Two findings mattered more than the build: a shared-engine <strong>concurrency bug that
+          only surfaced under load</strong> (~6&times; throughput once fixed), and a scoring metric
+          quietly rewarding the wrong signal rather than genuine matches. Neither presented as an
+          obvious failure; both needed working backwards from behaviour to cause.
+        </p>
+        <p class="repo"><a href="https://github.com/CamCook314/image-to-ocr">github.com/CamCook314/image-to-ocr</a></p>
+        <div class="stack">
+          <span class="tag">Python</span><span class="tag">PyMuPDF</span><span class="tag">async/concurrency</span>
+          <span class="tag">JavaScript</span><span class="tag">information retrieval</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric none">Client<small>project</small></div>
+      <div>
+        <h3>Critical Minerals World Map</h3>
+        <p class="proj-where">Geospatial data visualisation · D3.js · commissioned, not yet public</p>
+        <p>
+          An interactive world map linked bidirectionally to a periodic table, so official
+          critical-minerals-by-country designations can be explored from either direction —
+          click a country to light its minerals, or an element to light its producers.
+          Multi-select filtering resolves to the intersection rather than the union.
+        </p>
+        <p>
+          Backed by a spreadsheet-to-JSON data pipeline and a single-file standalone build, so the
+          whole tool ships as one self-contained HTML artefact with no hosting dependency.
+        </p>
+        <p class="private">Repository private — commissioned work, details on request.</p>
+        <div class="stack">
+          <span class="tag">D3.js</span><span class="tag">JavaScript</span><span class="tag">geospatial</span>
+          <span class="tag">data pipeline</span><span class="tag">build tooling</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric none">6-person<small>team, led vision</small></div>
+      <div>
+        <h3>Real-Time Vision System for a Physical Board Game</h3>
+        <p class="proj-where">Computer vision · Python, OpenCV, PyTorch · University capstone, DECO3801</p>
+        <p>
+          Originated the concept and led the vision workstream on an integrated hardware/software
+          system: overhead camera capture, a trained classifier, and projector output back onto a
+          physical playing surface. Built the <strong>camera-to-projector coordinate
+          calibration</strong> and made piece detection hold up under occlusion and variable
+          lighting — against real physical conditions, not clean test data.
+        </p>
+        <p>
+          Moved from an off-the-shelf model to a custom-trained DINOv2 classifier when accuracy
+          plateaued, and integrated the vision output with teammates' API and frontend across
+          defined interfaces.
+        </p>
+        <p class="repo"><a href="https://github.com/CamCook314/B0365B-Carcassonne-Project">github.com/CamCook314/B0365B-Carcassonne-Project</a></p>
+        <div class="stack">
+          <span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span>
+          <span class="tag">DINOv2</span><span class="tag">Flask</span><span class="tag">calibration</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric none">Sole<small>developer</small></div>
+      <div>
+        <h3>Laboratory Operations Platform</h3>
+        <p class="proj-where">Production internal system · Python, Flask, PostgreSQL · ALS Environmental</p>
+        <p>
+          I identified a problem in my own workplace that nobody had assigned to anyone, and took
+          the resulting platform from concept through requirements, design, build, deployment and
+          ongoing maintenance. It has since grown from a single department into a
+          <strong>multinational, multi-team system</strong>, and I remain its sole developer.
+        </p>
+        <p>
+          Every requirement came from chemists and supervisors who held the domain knowledge; the
+          work was translating that into something they could depend on daily, then documenting it,
+          training people on it and running the issue and feature-request cycle. Recognised with an
+          <strong>ALS Innovation Award, April 2026</strong>.
+        </p>
+        <p class="private">Confidential, employer-owned code — details on request.</p>
+        <div class="stack">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span>
+          <span class="tag">SQLite</span><span class="tag">REST APIs</span><span class="tag">Azure</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric none">From<small>first principles</small></div>
+      <div>
+        <h3>Generalised N&times;N Rubik's Cube Engine</h3>
+        <p class="proj-where">State engine · C++ · personal project</p>
+        <p>
+          A from-scratch state engine for an arbitrary-size cube: face and slice rotation logic over
+          flat vector storage, an edge-cycling algorithm driven by an adjacency table, plus
+          interactive and randomised-scramble modes. Written to practise low-level state management
+          and correctness in C++ without leaning on libraries — because the problem was interesting,
+          not because anything required it.
+        </p>
+        <div class="stack">
+          <span class="tag">C++</span><span class="tag">Makefile</span><span class="tag">Linux</span>
+          <span class="tag">algorithms</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-metric none">Bare<small>metal</small></div>
+      <div>
+        <h3>Microcontroller Systems Programming</h3>
+        <p class="proj-where">Embedded · C, AVR assembly · University, CSSE2010</p>
+        <p>
+          Bare-metal programming on Atmel AVR ATmega microcontrollers in both C and AVR assembly —
+          procedures and interrupt service routines written against a defined specification —
+          alongside digital logic, combinational and sequential circuit design, computer
+          organisation and memory architecture. My first exposure to software where the hardware
+          behaviour <em>is</em> the specification.
+        </p>
+        <div class="stack">
+          <span class="tag">C</span><span class="tag">AVR assembly</span><span class="tag">interrupts</span>
+          <span class="tag">digital logic</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Capabilities</h2>
+    <div class="caps">
+      <div class="cap">
+        <div class="cap-k">Languages</div>
+        <div class="cap-v">Python, C, C++, AVR assembly, Java, SQL, JavaScript, MATLAB</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">Performance</div>
+        <div class="cap-v">OpenMP, CUDA, SIMD/vectorisation, profiling, cache and memory optimisation, complexity analysis, algorithm implementation from first principles</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">Systems &amp; delivery</div>
+        <div class="cap-v">Linux, Makefile builds, Git, CI/CD, REST API design, relational database design (PostgreSQL, SQLite), Azure, SLURM job scheduling</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">Data &amp; ML</div>
+        <div class="cap-v">NumPy, SciPy, pandas, Matplotlib, OpenCV, PyTorch; batch and concurrent processing pipelines; integrating trained models into working software</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">AI-assisted development</div>
+        <div class="cap-v">Claude, Claude Code and ChatGPT used daily for agentic and AI-assisted coding — with the output reviewed, tested and corrected rather than accepted as written</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">Mathematics</div>
+        <div class="cap-v">Linear algebra and proof-based calculus; operations research and optimisation (linear, integer and dynamic programming, meta-heuristics); coding theory (Hamming, BCH, Reed–Solomon); cryptography (AES, RSA); statistics and experimental design</div>
+      </div>
+      <div class="cap">
+        <div class="cap-k">Practice</div>
+        <div class="cap-v">Requirements definition through verification; unit and integration testing; code review; root-cause investigation; inline and markdown documentation; Trello issue and feature tracking with real end users</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-head">Background</h2>
+    <div class="edu">
+      <div class="edu-k">Education</div>
+      <div>
+        <p>
+          <strong>University of Queensland — Bachelor of Computer Science</strong>, graduating end of 2026.
+          Mathematics-heavy coursework carried over from an earlier dual Mathematics/Computer Science
+          program: High-Performance Computing, Algorithms and Data Structures, Computer Systems and
+          microcontroller programming, Operations Research, Coding and Cryptography, and Theory of Computing.
+        </p>
+        <p>
+          <strong>Laboratory Technician, ALS Environmental</strong> — October 2022 to present.
+          High-throughput analytical testing under turnaround pressure and strict method compliance.
+          Cross-trained across five sections in six months; eight staff trained across three sections;
+          included in IT firewall-change smoke testing outside my department.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>camcook314@gmail.com</span>
+    <a href="https://github.com/CamCook314">github.com/CamCook314</a>
+    <span class="avail">Brisbane · open to relocating within Australia</span>
+  </footer>
+
+</div>
